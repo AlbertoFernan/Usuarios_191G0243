@@ -1,0 +1,45 @@
+﻿<Window x:Class="Usuarios_191G0243.Views.IniciarSesionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Usuarios_191G0243.Views"
+        xmlns:vm="clr-namespace:Usuarios_191G0243.ViewModels"
+        mc:Ignorable="d"
+        Title="IniciarSesionView" Height="450" Width="800">
+    <Grid>
+        <Grid.DataContext>
+            <vm:UsuariosViewModel></vm:UsuariosViewModel>
+        </Grid.DataContext>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".2*"></ColumnDefinition>
+            <ColumnDefinition Width=".6*"></ColumnDefinition>
+            <ColumnDefinition Width=".2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Stretch="UniformToFill" Grid.ColumnSpan="3" Source="https://s2.best-wallpaper.net/wallpaper/1920x1080/1704/Colorful-light-abstract-black-background_1920x1080.jpg"></Image>
+        <Label FontSize="14" BorderBrush="#FF298D" BorderThickness="10,1,10,1" Background="White" Foreground="#FF298D" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1">Inicio de sesion</Label>
+
+
+        <StackPanel  Background="#35FCA5" Grid.Column="1"  VerticalAlignment="Center" Margin="50,50,50,50">
+            <Label Margin="5,5,0,0">Correo:</Label>
+            <DockPanel Margin="5,0,5,0">
+                <Image Height="20" Width="20" Source="https://cdn-icons-png.flaticon.com/512/646/646094.png"></Image>
+                <TextBox Text="{Binding Us.EMail}" Margin="5,0,5,0" BorderBrush="#17593A" BorderThickness="0,0,0,3" ></TextBox>
+            </DockPanel>
+            <Label Margin="5,0,0,0">Contraseña:</Label>
+            <DockPanel  Margin="5,0,5,5" >
+                <Image Height="20" Width="20" Source="https://cdn-icons-png.flaticon.com/512/1001/1001008.png"></Image>
+           
+                <TextBox   Name="txt" Text="{Binding Us.Contraseña}"  BorderBrush="#17593A" BorderThickness="0,0,0,3" Margin="5,0,5,0" ></TextBox>
+
+            </DockPanel>
+            <TextBlock Foreground="#FF298D" HorizontalAlignment="Center" Text="{Binding Error}"></TextBlock>
+
+            <WrapPanel HorizontalAlignment="Center">
+               
+                <Button  Foreground="White" Background="Black" BorderBrush="#FF298D" BorderThickness="10,1,1,1" Margin="5" Padding="10,1,10,1" HorizontalAlignment="Center" Command="{Binding IniciarSesionCommand}">Iniciar Sesion</Button>
+            <Button  Foreground="White" Background="Black" BorderBrush="#FF298D" BorderThickness="10,1,1,1" Margin="5" Padding="10,1,10,1" HorizontalAlignment="Center" Command="{Binding VerRegistrarCommand}">Registrar Usuario</Button>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
